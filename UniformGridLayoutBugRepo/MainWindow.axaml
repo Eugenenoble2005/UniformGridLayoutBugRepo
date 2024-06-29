@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:local="using:UniformGridLayoutBugRepo"
+        x:DataType="local:MainWIndowViewModel"
+        Background="Transparent"
+        TransparencyLevelHint="AcrylicBlur"
+        x:Class="UniformGridLayoutBugRepo.MainWindow"
+        Title="UniformGridLayoutBugRepo">
+    <Design.DataContext>
+        <local:MainWIndowViewModel/>
+    </Design.DataContext>
+    <ScrollViewer>
+        <ItemsRepeater ItemsSource="{Binding Data}">
+            <ItemsRepeater.Layout>
+                <WrapLayout/>
+            </ItemsRepeater.Layout>
+            <ItemsRepeater.ItemTemplate>
+                <DataTemplate>
+                    <!--Data will appear constricted no matter the control used here, whether Button,TextBlock, ContentControl, Panel ,e.t.c Setting a padding does not fix the problem.-->
+                    <Button Content="{Binding number}"/>
+                </DataTemplate>
+            </ItemsRepeater.ItemTemplate>
+        </ItemsRepeater>
+    </ScrollViewer>
+</Window>
