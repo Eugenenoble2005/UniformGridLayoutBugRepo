@@ -15,7 +15,7 @@
     <ScrollViewer>
         <ItemsRepeater ItemsSource="{Binding Data}">
             <ItemsRepeater.Layout>
-                <WrapLayout/>
+                <UniformGridLayout/>
             </ItemsRepeater.Layout>
             <ItemsRepeater.ItemTemplate>
                 <DataTemplate>

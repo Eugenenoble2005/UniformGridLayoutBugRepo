@@ -16,7 +16,15 @@ public class MainWIndowViewModel : ReactiveObject
             {
                 data.Add(new()
                 {
-                    number = i
+                    //does not display properly in UniformGridLayout
+                    number = i,
+                    //Displays Properly in UniformGridLayout
+                    stringData1 = "This is a very long sentence ",
+                    //Does not display properly in UnifromGridLayout
+                    stringData2 = $"This is a very long sentence {i}",
+                    //does not display properly
+                    stringData3 = i.ToString()
+                    
                 });
             }
 
@@ -28,4 +36,7 @@ public class MainWIndowViewModel : ReactiveObject
 public class Data
 {
     public int number { get; set; }
+    public string stringData1 { get; set; }
+    public string stringData2 { get; set; }
+    public string stringData3 { get; set; }
 }
